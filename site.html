@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonathas | Hub Oficial</title>
+    
+    <!-- Importando uma fonte limpa e moderna do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+    <style>
+        /* TEMA: Eficiência, Sistema, Dark Mode (Estilo Bik) */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0d0d0d; /* Fundo quase preto (ausência de caos) */
+            color: #e0e0e0;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* O Container Central (simulando a tela do celular) */
+        .hub-container {
+            width: 100%;
+            max-width: 480px; /* Largura ideal para Linktrees */
+            text-align: center;
+        }
+
+        /* Seção de Perfil */
+        .profile-pic {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 2px solid #333;
+            object-fit: cover;
+            margin-bottom: 15px;
+            transition: 0.3s;
+        }
+
+        .profile-pic:hover {
+            border-color: #00E5FF; /* Azul digital (Cle) ao passar o mouse */
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+        }
+
+        .bio {
+            font-size: 0.95rem;
+            color: #888;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        /* Os Botões (Ferramentas, não brinquedos - Estilo Div) */
+        .links-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .link-btn {
+            display: block;
+            width: 100%;
+            padding: 18px 20px;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: 1px solid #2a2a2a;
+            transition: all 0.2s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .link-btn:hover {
+            background-color: #262626;
+            transform: translateY(-2px); /* Efeito tátil de movimento (Val) */
+            border-color: #555;
+        }
+
+        /* Botões de Destaque (Ação Principal) */
+        .btn-destaque {
+            background: linear-gradient(135deg, #101010 0%, #1a1a1a 100%);
+            border: 1px solid #00E5FF; /* Bordas iluminadas */
+            color: #00E5FF;
+            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.1);
+        }
+
+        .btn-destaque:hover {
+            background-color: #00E5FF;
+            color: #0d0d0d;
+            box-shadow: 0 6px 20px rgba(0, 229, 255, 0.3);
+        }
+
+        .btn-socios {
+            border-color: #00FF66;
+            color: #00FF66;
+        }
+
+        .btn-socios:hover {
+            background-color: #00FF66;
+            color: #0d0d0d;
+        }
+
+        /* Rodapé de Sistema */
+        .system-footer {
+            margin-top: 40px;
+            font-family: 'JetBrains Mono', monospace; /* Fonte de código */
+            font-size: 0.75rem;
+            color: #444;
+        }
+        
+        .status-dot {
+            color: #00FF66;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hub-container">
+        
+        <!-- INSIRA O LINK DA SUA FOTO AQUI NO 'src' -->
+        <img src="https://via.placeholder.com/150/1a1a1a/ffffff?text=FOTO" alt="Foto de Jonathas" class="profile-pic">
+        
+        <h1 class="author-name">Jonathas</h1>
+        <p class="bio">Reduzindo a entropia do universo, uma página de cada vez. <br>Autor de [Nome do Seu Livro].</p>
+
+        <div class="links-wrapper">
+            
+            <!-- LINK 1: COMPRAR O LIVRO -->
+            <!-- Substitua o # pelo link de onde a pessoa compra o livro (seu WhatsApp, site, etc) -->
+            <a href="#" target="_blank" class="link-btn btn-destaque">
+                📖 Adquirir o Livro (Edição Física)
+            </a>
+
+            <!-- LINK 2: O FORMULÁRIO DE FEEDBACK / SÓCIOS -->
+            <!-- Substitua o # pelo link do seu Google Forms/Typeform -->
+            <a href="#" target="_blank" class="link-btn btn-socios">
+                🤝 Sistema de Sócios & Feedback
+            </a>
+
+            <!-- LINK 3: INSTAGRAM -->
+            <!-- Substitua o # pelo link do seu perfil -->
+            <a href="#" target="_blank" class="link-btn">
+                📸 Instagram Oficial
+            </a>
+
+            <!-- LINK 4: FACEBOOK -->
+            <!-- Substitua o # pelo link da sua página ou perfil -->
+            <a href="#" target="_blank" class="link-btn">
+                📘 Facebook
+            </a>
+
+        </div>
+
+        <div class="system-footer">
+            <p><span class="status-dot">●</span> Sistema Online. Entropia controlada.</p>
+            <p>&copy; 2024 Jonathas</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
