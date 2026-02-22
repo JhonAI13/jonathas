@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonathas | Hub Oficial</title>
+    <title>Jonathas Rocha | Hub do Autor</title>
     
-    <!-- Importando uma fonte limpa e moderna do Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <!-- Fonte EB Garamond (Clássica de Livros) -->
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
 
     <style>
-        /* TEMA: Eficiência, Sistema, Dark Mode (Estilo Bik) */
+        /* TEMA: Livro Clássico, Papel Kraft e Tinta Nanquim */
         
         * {
             margin: 0;
@@ -18,161 +18,192 @@
         }
 
         body {
-            background-color: #0d0d0d; /* Fundo quase preto (ausência de caos) */
-            color: #e0e0e0;
-            font-family: 'Inter', sans-serif;
+            /* Fundo usando a SUA imagem de Papel Kraft */
+            background-color: #dcb88e; /* Cor de segurança caso a internet esteja lenta */
+            background-image: url('papelcraft.png'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* O fundo fica parado enquanto a página rola */
+            background-repeat: no-repeat;
+            
+            color: #2b1d14; /* Tinta marrom escura/preta (Nanquim) */
+            font-family: 'EB Garamond', serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
-        /* O Container Central (simulando a tela do celular) */
-        .hub-container {
+        /* Página do Livro (Onde os links ficam) */
+        .page-container {
             width: 100%;
-            max-width: 480px; /* Largura ideal para Linktrees */
+            max-width: 500px;
+            background-color: #f4ead5; /* Cor de página de livro antigo */
+            padding: 40px 30px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4), 
+                        inset 0 0 50px rgba(180, 150, 110, 0.2); /* Sombra de profundidade e bordas envelhecidas */
+            border: 1px solid #c2a784;
             text-align: center;
+            position: relative;
         }
 
-        /* Seção de Perfil */
+        /* Dobra decorativa no canto da página */
+        .page-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-width: 0 30px 30px 0;
+            border-style: solid;
+            border-color: rgba(0,0,0,0) rgba(0,0,0,0) #eedfb5 #eedfb5; /* Adaptado para funcionar com fundo de imagem */
+            box-shadow: -2px 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* Foto do Autor (Estilo Retrato/Selo) */
         .profile-pic {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            border: 2px solid #333;
+            width: 100px; /* Tamanho pequeno/discreto */
+            height: 100px;
             object-fit: cover;
+            border-radius: 50%; /* Deixa a foto redonda */
+            border: 2px solid #2b1d14; /* Borda cor de tinta */
+            padding: 4px; /* Espaço entre a foto e a borda */
             margin-bottom: 15px;
-            transition: 0.3s;
+            background-color: #f4ead5;
         }
 
-        .profile-pic:hover {
-            border-color: #00E5FF; /* Azul digital (Cle) ao passar o mouse */
-        }
-
-        .author-name {
-            font-size: 1.5rem;
+        /* Tipografia */
+        h1 {
+            font-size: 2.2rem;
             font-weight: 800;
             margin-bottom: 5px;
-            letter-spacing: -0.5px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        .bio {
-            font-size: 0.95rem;
-            color: #888;
+        p.bio {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #4a3625;
             margin-bottom: 30px;
-            line-height: 1.4;
         }
 
-        /* Os Botões (Ferramentas, não brinquedos - Estilo Div) */
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 25px 0 15px 0;
+            text-align: left;
+            border-bottom: 1px solid #c2a784;
+            padding-bottom: 5px;
+            color: #2b1d14;
+        }
+
+        /* Botões / Links */
         .links-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
         }
 
         .link-btn {
             display: block;
             width: 100%;
-            padding: 18px 20px;
-            background-color: #1a1a1a;
-            color: #ffffff;
+            padding: 15px 20px;
+            background-color: transparent;
+            color: #2b1d14;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
-            border-radius: 8px;
-            border: 1px solid #2a2a2a;
-            transition: all 0.2s ease-in-out;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
+            font-size: 1.1rem;
+            border: 1px solid #2b1d14; /* Borda estilo carimbo/tinta */
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .link-btn:hover {
-            background-color: #262626;
-            transform: translateY(-2px); /* Efeito tátil de movimento (Val) */
-            border-color: #555;
+            background-color: #2b1d14; /* Inverte as cores (tinta preenche o fundo) */
+            color: #f4ead5;
         }
 
-        /* Botões de Destaque (Ação Principal) */
+        /* Botão do Livro (Estilo Cupom Picotado / Destaque) */
         .btn-destaque {
-            background: linear-gradient(135deg, #101010 0%, #1a1a1a 100%);
-            border: 1px solid #00E5FF; /* Bordas iluminadas */
-            color: #00E5FF;
-            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.1);
+            background-color: #e5cdb0;
+            border: 2px dashed #2b1d14; /* Borda tracejada lembrando algo para recortar */
+            font-weight: 800;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
         }
 
         .btn-destaque:hover {
-            background-color: #00E5FF;
-            color: #0d0d0d;
-            box-shadow: 0 6px 20px rgba(0, 229, 255, 0.3);
+            background-color: #2b1d14;
+            color: #f4ead5;
+            border-style: solid;
         }
 
-        .btn-socios {
-            border-color: #00FF66;
-            color: #00FF66;
-        }
-
-        .btn-socios:hover {
-            background-color: #00FF66;
-            color: #0d0d0d;
-        }
-
-        /* Rodapé de Sistema */
-        .system-footer {
+        /* Rodapé */
+        .footer {
             margin-top: 40px;
-            font-family: 'JetBrains Mono', monospace; /* Fonte de código */
-            font-size: 0.75rem;
-            color: #444;
-        }
-        
-        .status-dot {
-            color: #00FF66;
+            font-size: 0.9rem;
+            color: #705844;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
 
-    <div class="hub-container">
+    <div class="page-container">
         
-        <!-- INSIRA O LINK DA SUA FOTO AQUI NO 'src' -->
-        <img src="https://via.placeholder.com/150/1a1a1a/ffffff?text=FOTO" alt="Foto de Jonathas" class="profile-pic">
-        
-        <h1 class="author-name">Jonathas</h1>
-        <p class="bio">Reduzindo a entropia do universo, uma página de cada vez. <br>Autor de [Nome do Seu Livro].</p>
+        <!-- A sua foto (Estilo retrato de autor) -->
+        <img src="eu.png" alt="Foto de Jonathas Rocha" class="profile-pic">
+
+        <h1>Jonathas Rocha</h1>
+        <p class="bio">"Transformando o caos em sistemas e a ciência em histórias."</p>
 
         <div class="links-wrapper">
             
-            <!-- LINK 1: COMPRAR O LIVRO -->
-            <!-- Substitua o # pelo link de onde a pessoa compra o livro (seu WhatsApp, site, etc) -->
-            <a href="#" target="_blank" class="link-btn btn-destaque">
-                📖 Adquirir o Livro (Edição Física)
+            <!-- SEÇÃO: O LIVRO -->
+            <div class="section-title">A Obra</div>
+            
+            <a href="https://forms.gle/tYZ2kuniQstpsvwg6" target="_blank" class="link-btn btn-destaque">
+                ✒️ Avalie o Livro & Sistema de Sócios
             </a>
 
-            <!-- LINK 2: O FORMULÁRIO DE FEEDBACK / SÓCIOS -->
-            <!-- Substitua o # pelo link do seu Google Forms/Typeform -->
-            <a href="#" target="_blank" class="link-btn btn-socios">
-                🤝 Sistema de Sócios & Feedback
+            <!-- SEÇÃO: CONTATO E REDES -->
+            <div class="section-title">Conexões & Contato</div>
+            
+            <a href="https://www.instagram.com/beakman13/" target="_blank" class="link-btn">
+                Instagram (@beakman13)
             </a>
 
-            <!-- LINK 3: INSTAGRAM -->
-            <!-- Substitua o # pelo link do seu perfil -->
-            <a href="#" target="_blank" class="link-btn">
-                📸 Instagram Oficial
+            <!-- Usando mailto: para abrir direto o aplicativo de email -->
+            <a href="mailto:jonathas.martins.job@gmail.com" class="link-btn">
+                E-mail Profissional
             </a>
 
-            <!-- LINK 4: FACEBOOK -->
-            <!-- Substitua o # pelo link da sua página ou perfil -->
-            <a href="#" target="_blank" class="link-btn">
-                📘 Facebook
+            <a href="mailto:jonathas.bbbb@gmail.com" class="link-btn">
+                E-mail Pessoal
             </a>
+            <!-- SEÇÃO: PROFISSIONAL E CÓDIGO -->
+            <div class="section-title">Análise de Dados & Tecnologia</div>
+            
+            <a href="https://jonathasmartinsdata.my.canva.site/" target="_blank" class="link-btn">
+                Portfólio de Análise de Dados
+            </a>
+
+            <a href="https://www.linkedin.com/in/jonathas-rocha/" target="_blank" class="link-btn">
+                LinkedIn
+            </a>
+
+            <a href="https://github.com/JhonAI13" target="_blank" class="link-btn">
+                GitHub
+            </a>
+
 
         </div>
 
-        <div class="system-footer">
-            <p><span class="status-dot">●</span> Sistema Online. Entropia controlada.</p>
-            <p>&copy; 2024 Jonathas</p>
+        <div class="footer">
+            <p>Impresso digitalmente &copy; 2026</p>
         </div>
 
     </div>
